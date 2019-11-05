@@ -12,7 +12,7 @@ If there is no task for this problem he creates a task for this problem in the t
 For this he addes a node in which he writes the if of the problem and the link of the website aswell as his name.<br/><br/>
 
   Example: If participant A tries to solve the problem with the id 15, he creates the folder "15".<br/>
-           He then goes to the project site (https://github.com/orgs/BUW-Comp-Prog-Project/projects/1)<br/>
+           He then goes to the project site (https://github.com/BUW-Comp-Prog-Project/WS_19/projects/1)<br/>
            and looks if there exists a task for this problem. If the tasks exists he moves the task to the "In progress" column.<br/>
            If the tasks does not exist he creates a task which looks like this:<br/>
            "Problem: 15 \n https://www.spoj.com/problems/Example/ \n To be solved by: A" <br/>
@@ -28,9 +28,9 @@ It is a good practice to commit changes regularly and helps in the later evaluat
 If a problem was solved the folder with the name of the participant is to be renamed to the name of the participant concatinated by "-Solved". Also the Participant moves the card for this problem from the "In progress" column to the "Solved" column.<br/>
 
   Example: Participant A solves the problem with id "15" and renames the folder "A" to "A-Solved".<br/>
-           He then goes to the project site (https://github.com/orgs/BUW-Comp-Prog-Project/projects/1) and moves the card for <br/>
+           He then goes to the project site (https://github.com/BUW-Comp-Prog-Project/WS_19/projects/1) and moves the card for <br/>
            this problem from "In progress" to "Solved"<br/>
   Example: Participant A and B solve the problem with id "15" and renames the folder "A-B" to "A-B-Solved".<br/>
-           A or B then goes to the project site (https://github.com/orgs/BUW-Comp-Prog-Project/projects/1) and moves the card for <br/>
+           A or B then goes to the project site (https://github.com/BUW-Comp-Prog-Project/WS_19/projects/1) and moves the card for <br/>
            this problem from "In progress" to "Solved"<br/>
 
