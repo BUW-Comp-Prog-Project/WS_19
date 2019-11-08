@@ -67,7 +67,7 @@ int main()
 			if (isPrime(i))
 				cout << i << endl;
 		}
-		cout << endl;
+		cout << endl; //
 	}
 	return 0;
 }
