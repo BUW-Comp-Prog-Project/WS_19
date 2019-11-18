@@ -1,5 +1,5 @@
 //
-// Created by Anton on 13.11.2019.
+// Created by Anton-Solved on 13.11.2019.
 // https://www.spoj.com/problems/SANTA1/
 
 #include <iostream>
