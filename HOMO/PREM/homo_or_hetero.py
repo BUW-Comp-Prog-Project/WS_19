@@ -5,10 +5,10 @@ dict = {}
     # print('hey')
 homo = 0
 hetero = 0
-while(z>0):
+while(z):
     op, num = input().split()
     num = int(num)
-    print(op,num)
+    # print(op, num)
 
     if (op =='insert'):
         if num in dict:
@@ -41,22 +41,22 @@ while(z>0):
                 m = list(dict.values())
                 # print(type(z))
                 if (m[0] > 1):
-                    hetero -= 1
+                    hetero = 0
 
 
 
     # # we perform check homo or hetero
-    # if (homo != 0 and hetero != 0):
-    #     print('both')
-    # elif (hetero==0 and homo!=0):
-    #     print('homo')
-    # elif( hetero !=0 and homo ==0):
-    #     print('hetero')
-    # else:
-    #     print('neither')
-    # print("hetero is " , hetero)
+    if (homo > 0 and hetero > 0):
+        print('both')
+    elif (hetero==0 and homo>0):
+        print('homo')
+    elif( hetero >0 and homo ==0):
+        print('hetero')
+    else:
+        print('neither')
+    # print("hetero is " , hetero, " homo is ", homo)
     # print("homo is ,", homo)
-
+    # print(z)
 
         # check_homo_hetero()
     z = z-1
