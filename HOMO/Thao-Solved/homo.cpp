@@ -6,7 +6,10 @@
 using namespace std;
 
 int main()
-{	
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	
 	int cases, num, homo = 0, hetero = 0;
 	string op, status;
 	map<int, int> m; // key: the number, value: its occurence

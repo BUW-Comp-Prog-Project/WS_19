@@ -32,6 +32,9 @@ public:
 
 int main()
 {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
 	unsigned long cases, s, p, total_p;
 	string op, name;
 	map<string, Reindeer> reindeer_map;
