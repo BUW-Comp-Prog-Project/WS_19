@@ -25,7 +25,7 @@ const int me = 300025;
 int Q, N;
 int x[me], y[me], st[me << 2];
 char type[me], name[me][25];
-vector<pair<int, int>> compressor;
+vector<pair<int, int>> reindeer_add;
 map<string, pair<int, int> > values;
 map<string, int> poss;
 
@@ -49,7 +49,7 @@ int Get(int I, int low, int high, int l, int r){
     return max(Get(I << 1, low, mid, l, r),
                Get(I << 1 | 1, mid + 1, high, l, r));
 }
-int GetLeft(int low, int high){
+int to_left(int low, int high){
     int best = 0;
     while(low <= high){
         int mid = (low + high + 1) >> 1;
@@ -64,7 +64,7 @@ int GetLeft(int low, int high){
     }
     return best;
 }
-int GetRight(int low, int high){
+int to_right(int low, int high){
     int best = 0;
     while(low <= high){
         int mid = (low + high + 1) >> 1;
@@ -90,30 +90,30 @@ int main() {
         if(type[i] == 'A'){
             scanf("%d%d", &x[i], &y[i]);
             values[name[i]] = make_pair(x[i], y[i]);
-            compressor.push_back(make_pair(x[i], y[i]));
+            reindeer_add.push_back(make_pair(x[i], y[i]));
         }
     }
-    sort(compressor.begin(), compressor.end());
-    N = (int)compressor.size();
+    sort(reindeer_add.begin(), reindeer_add.end());
+    N = (int)reindeer_add.size();
 
     for(auto i : values){
-        poss[i.first] = (int)(lower_bound(compressor.begin(), compressor.end(), i.second) - compressor.begin()) + 1;
+        poss[i.first] = (int)(lower_bound(reindeer_add.begin(), reindeer_add.end(), i.second) - reindeer_add.begin()) + 1;
     }
 
     long long result = 0;
     for(int i = 0; i < Q; i ++){
         if(type[i] == 'A'){
             int where = poss[name[i]];
-            int l = GetLeft(1, where - 1);
-            int r = GetRight(where + 1, N);
+            int l = to_left(1, where - 1);
+            int r = to_right(where + 1, N);
             result -= 1LL * l * r;
             result += 1LL * (l + r) * y[i];
             Update(1, 1, N, where, y[i]);
         }
         else{
             int where = poss[name[i]];
-            int l = GetLeft(1, where - 1);
-            int r = GetRight(where + 1, N);
+            int l = to_left(1, where - 1);
+            int r = to_right(where + 1, N);
             result += 1LL * l * r;
             result -= 1LL * (l + r) * values[name[i]].second;
             Update(1, 1, N, where, 0);
@@ -123,3 +123,5 @@ int main() {
 
     return 0;
 }
+
+
