@@ -54,7 +54,8 @@ void update_tree(int *fenwick_tree, int n, int i, int j, int v)
 }
 
 int main()
-{	ios_base::sync_with_stdio(false);
+{	
+	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 
 	cin >> cases;
