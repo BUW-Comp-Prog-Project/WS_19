@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-long energy[1000002], ed[1002], time[1002]; // ed = "energy disintegrate" ;
+long energy[1000002], ed[1002], t[1002]; // ed = "energy disintegrate" ;
 int l = 0;
 
 long ksack(long high)
@@ -15,7 +15,7 @@ long ksack(long high)
     {
         if(high-ed[i] >= 0)
         {
-            energy[high] = max(energy[high], time[i] + ksack(high-ed[i]));
+            energy[high] = max(energy[high], t[i] + ksack(high-ed[i]));
         }
     }
     return energy[high];
@@ -37,7 +37,7 @@ while(n--)
     for(int i=0;i<l;i++)
         cin>>ed[i];
     for(int i=0;i<l;i++)
-        cin>>time[i];
+        cin>>t[i];
 
     cout << ksack(high) << endl;
 }
